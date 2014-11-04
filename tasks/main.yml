@@ -1,0 +1,108 @@
+---
+- name: Ensure groups present
+  group: >-
+    'name={{ item.name }}'
+    {% if item.gid is defined %}
+    'gid={{ item.gid }}'
+    {% endif %}
+    {% if item.state is defined %}
+    'state={{ item.state }}'
+    {% endif %}
+    {% if item.system is defined %}
+    'system={{ item.system }}'
+    {% endif %}
+  with_items: account_groups
+
+- name: Ensure users present
+  user: >-
+    'name={{ item.name }}'
+    {% if item.append is defined %}
+    'append={{ item.append }}'
+    {% endif %}
+    {% if item.comment is defined %}
+    'comment={{ item.comment }}'
+    {% endif %}
+    {% if item.createhome is defined %}
+    'createhome={{ item.createhome }}'
+    {% endif %}
+    {% if item.force is defined %}
+    'force={{ item.force }}'
+    {% endif %}
+    {% if item.generate_ssh_key is defined %}
+    'generate_ssh_key={{ item.generate_ssh_key }}'
+    {% endif %}
+    {% if item.group is defined %}
+    'group={{ item.group }}'
+    {% endif %}
+    {% if item.groups is defined %}
+    'groups={{ item.groups }}'
+    {% endif %}
+    {% if item.home is defined %}
+    'home={{ item.home }}'
+    {% endif %}
+    {% if item.login_class is defined %}
+    'login_class={{ item.login_class }}'
+    {% endif %}
+    {% if item.move_home is defined %}
+    'move_home={{ item.move_home }}'
+    {% endif %}
+    {% if item.non_unique is defined %}
+    'non_unique={{ item.non_unique }}'
+    {% endif %}
+    {% if item.password is defined %}
+    'password={{ item.password }}'
+    {% endif %}
+    {% if item.remove is defined %}
+    'remove={{ item.remove }}'
+    {% endif %}
+    {% if item.shell is defined %}
+    'shell={{ item.shell }}'
+    {% endif %}
+    {% if item.ssh_key_bits is defined %}
+    'ssh_key_bits={{ item.ssh_key_bits }}'
+    {% endif %}
+    {% if item.ssh_key_comment is defined %}
+    'ssh_key_comment={{ item.ssh_key_comment }}'
+    {% endif %}
+    {% if item.ssh_key_file is defined %}
+    'ssh_key_file={{ item.ssh_key_file }}'
+    {% endif %}
+    {% if item.ssh_key_passphrase is defined %}
+    'ssh_key_passphrase={{ item.ssh_key_passphrase }}'
+    {% endif %}
+    {% if item.ssh_key_type is defined %}
+    'ssh_key_type={{ item.ssh_key_type }}'
+    {% endif %}
+    {% if item.state is defined %}
+    'state={{ item.state }}'
+    {% endif %}
+    {% if item.system is defined %}
+    'system={{ item.system }}'
+    {% endif %}
+    {% if item.uid is defined %}
+    'uid={{ item.uid }}'
+    {% endif %}
+    {% if item.update_password is defined %}
+    'update_password={{ item.update_password }}'
+    {% endif %}
+  with_items: account_users
+
+- name: Deploy ssh public keys
+  authorized_key: >-
+    'key={{ item.1.key }}'
+    'user={{ item.0.name }}'
+    {% if item.1.key_options is defined %}
+    'key_options={{ item.1.key_options }}'
+    {% endif %}
+    {% if item.1.manage_dir is defined %}
+    'manage_dir={{ item.1.manage_dir }}'
+    {% endif %}
+    {% if item.1.path is defined %}
+    'path={{ item.1.path }}'
+    {% endif %}
+    {% if item.1.state is defined %}
+    'state={{ item.1.state }}'
+    {% endif %}
+  with_subelements:
+    - account_users
+    - authorized_key

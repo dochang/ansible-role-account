@@ -32,7 +32,7 @@ Example Playbook
             - name: foo
               createhome: yes
               groups: sudo
-              authorized_key:
+              authorized_keys:
                 - key: 'xxxxxxxx'
                   state: present
                 - key: 'yyyyyyyy'

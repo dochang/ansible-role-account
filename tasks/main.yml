@@ -105,4 +105,4 @@
     {% endif %}
   with_subelements:
     - account_users
-    - authorized_key
+    - authorized_keys

@@ -1,6 +1,8 @@
 Account
 =======
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.account-blue.svg)](https://galaxy.ansible.com/list#/roles/2104)
+
 An ansible role to manage users & groups.
 
 Requirements

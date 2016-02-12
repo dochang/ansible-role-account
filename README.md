@@ -23,10 +23,6 @@ Role Variables
   - `account_users.authorized_keys` -- A list of ssh public keys where each key
     support all parameters from `authorized_key` module.
 
-**NOTE**: You must set `authorized_keys` for every user in `account_users` even
-if it's empty.  In that case, set `authorized_keys` to `[]`.  This is a
-technical limitation from Ansible.
-
 See `tasks/main.yml` for details.
 
 Dependencies

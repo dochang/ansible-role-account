@@ -2,7 +2,7 @@ Account
 =======
 
 [![Build Status](https://travis-ci.org/dochang/ansible-role-account.svg?branch=master)](https://travis-ci.org/dochang/ansible-role-account)
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.account-blue.svg)](https://galaxy.ansible.com/list#/roles/2104)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.account-blue.svg)](https://galaxy.ansible.com/dochang/account/)
 [![Issue Stats](http://issuestats.com/github/dochang/ansible-role-account/badge/pr)](http://www.issuestats.com/github/dochang/ansible-role-account)
 [![Issue Stats](http://issuestats.com/github/dochang/ansible-role-account/badge/issue)](http://www.issuestats.com/github/dochang/ansible-role-account)
 

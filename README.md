@@ -3,8 +3,8 @@ Account
 
 [![Build Status](https://travis-ci.org/dochang/ansible-role-account.svg?branch=master)](https://travis-ci.org/dochang/ansible-role-account)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-dochang.account-blue.svg)](https://galaxy.ansible.com/dochang/account/)
-[![Issue Stats](http://issuestats.com/github/dochang/ansible-role-account/badge/pr)](http://www.issuestats.com/github/dochang/ansible-role-account)
-[![Issue Stats](http://issuestats.com/github/dochang/ansible-role-account/badge/issue)](http://www.issuestats.com/github/dochang/ansible-role-account)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/dochang/ansible-role-account.svg)](http://isitmaintained.com/project/dochang/ansible-role-account "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/dochang/ansible-role-account.svg)](http://isitmaintained.com/project/dochang/ansible-role-account "Percentage of issues still open")
 
 An ansible role to manage users & groups.
 

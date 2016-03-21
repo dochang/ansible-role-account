@@ -5,7 +5,7 @@
     gid={{ item.gid | default(omit) }}
     state={{ item.state | default(omit) }}
     system={{ item.system | default(omit) }}
-  with_items: account_groups
+  with_items: '{{ account_groups }}'
 
 - name: Ensure users present
   user: >-
@@ -33,7 +33,7 @@
     system={{ item.system | default(omit) }}
     uid={{ item.uid | default(omit) }}
     update_password={{ item.update_password | default(omit) }}
-  with_items: account_users
+  with_items: '{{ account_users }}'
 
 - name: Deploy ssh public keys
   authorized_key: >-
@@ -44,6 +44,6 @@
     path={{ item.1.path | default(omit) }}
     state={{ item.1.state | default(omit) }}
   with_subelements:
-    - account_users
+    - '{{ account_users }}'
     - authorized_keys
     - skip_missing: yes
